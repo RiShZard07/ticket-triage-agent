@@ -1,0 +1,61 @@
+{
+  "ticket_id": "T038",
+  "steps": [
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "pirated content distribution report"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-1007"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "copyright infringement takedown notice"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "formal notice required for copyrighted material"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-1007"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "design assets shared without permission"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "draft_reply",
+      "args": {
+        "text": "Thank you for the report. We are checking whether a formal notice is needed and will follow up."
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-1007"
+      }
+    }
+  ]
+}

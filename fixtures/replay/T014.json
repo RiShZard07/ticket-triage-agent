@@ -1,0 +1,48 @@
+{
+  "ticket_id": "T014",
+  "steps": [
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "email change confirmation not arriving"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-1011"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "assign_team",
+      "args": {
+        "team": "auth"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "set_priority",
+      "args": {
+        "level": 2,
+        "reason": "Account change blocked for a single user; no lockout."
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "draft_reply",
+      "args": {
+        "text": "The new address was on our bounce list, which blocks confirmation emails. We have cleared it and resent the confirmation. Please check within the next few minutes."
+      }
+    },
+    {
+      "type": "final",
+      "team": "auth",
+      "priority": 2,
+      "summary": "Email change confirmation not delivered to a free account.",
+      "reply_draft": "The new address was on our bounce list, which blocks confirmation emails. We have cleared it and resent the confirmation. Please check within the next few minutes."
+    }
+  ]
+}

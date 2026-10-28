@@ -1,0 +1,48 @@
+{
+  "ticket_id": "T027",
+  "steps": [
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "per project permissions roles"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-1012"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "assign_team",
+      "args": {
+        "team": "feature_request"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "set_priority",
+      "args": {
+        "level": 3,
+        "reason": "Blocking a contracted enterprise rollout this quarter."
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "draft_reply",
+      "args": {
+        "text": "Thank you for the context. Project level roles are planned and we have flagged that it is blocking your rollout. Your account team will follow up with timing."
+      }
+    },
+    {
+      "type": "final",
+      "team": "feature_request",
+      "priority": 3,
+      "summary": "Enterprise needs project level permissions to unblock a rollout.",
+      "reply_draft": "Thank you for the context. Project level roles are planned and we have flagged that it is blocking your rollout. Your account team will follow up with timing."
+    }
+  ]
+}

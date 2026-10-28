@@ -1,0 +1,49 @@
+{
+  "ticket_id": "T019",
+  "steps": [
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "exports stuck processing never complete",
+        "k": 3
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-1002"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "assign_team",
+      "args": {
+        "team": "outage"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "set_priority",
+      "args": {
+        "level": 3,
+        "reason": "Large exports stuck for a Pro account with a deadline tomorrow."
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "draft_reply",
+      "args": {
+        "text": "Sorry about the stuck exports. We are restarting the export workers and will re-run your three jobs. You should see them complete today."
+      }
+    },
+    {
+      "type": "final",
+      "team": "outage",
+      "priority": 3,
+      "summary": "Large CSV exports stuck in processing overnight.",
+      "reply_draft": "Sorry about the stuck exports. We are restarting the export workers and will re-run your three jobs. You should see them complete today."
+    }
+  ]
+}

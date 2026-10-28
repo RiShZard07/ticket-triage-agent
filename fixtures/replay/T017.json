@@ -1,0 +1,48 @@
+{
+  "ticket_id": "T017",
+  "steps": [
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "dashboard 502 errors all users"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-1005"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "assign_team",
+      "args": {
+        "team": "outage"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "set_priority",
+      "args": {
+        "level": 5,
+        "reason": "Full dashboard outage for a 410 seat enterprise account with an open incident."
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "draft_reply",
+      "args": {
+        "text": "We are aware of the 502 errors and an incident is open. Engineers are rolling back the change that caused it. We will update you as soon as the dashboard recovers."
+      }
+    },
+    {
+      "type": "final",
+      "team": "outage",
+      "priority": 5,
+      "summary": "Dashboard 502 for all users on an enterprise account with an open incident.",
+      "reply_draft": "We are aware of the 502 errors and an incident is open. Engineers are rolling back the change that caused it. We will update you as soon as the dashboard recovers."
+    }
+  ]
+}

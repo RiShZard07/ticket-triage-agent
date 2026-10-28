@@ -1,0 +1,48 @@
+{
+  "ticket_id": "T012",
+  "steps": [
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "cannot remove former admin seat"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-1014"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "assign_team",
+      "args": {
+        "team": "auth"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "set_priority",
+      "args": {
+        "level": 2,
+        "reason": "Administrative cleanup with no active security exposure."
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "draft_reply",
+      "args": {
+        "text": "The remove option is disabled because that user holds an admin role. Promote another user to admin first, then the remove button will be enabled. Let us know if that does not work."
+      }
+    },
+    {
+      "type": "final",
+      "team": "auth",
+      "priority": 2,
+      "summary": "Departed admin cannot be removed; needs another admin promoted first.",
+      "reply_draft": "The remove option is disabled because that user holds an admin role. Promote another user to admin first, then the remove button will be enabled. Let us know if that does not work."
+    }
+  ]
+}

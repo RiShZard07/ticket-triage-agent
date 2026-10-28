@@ -1,0 +1,48 @@
+{
+  "ticket_id": "T024",
+  "steps": [
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "API connection resets status page operational"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-1001"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "assign_team",
+      "args": {
+        "team": "outage"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "set_priority",
+      "args": {
+        "level": 4,
+        "reason": "Integration down for an enterprise customer while the status page is green."
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "draft_reply",
+      "args": {
+        "text": "Thank you for the detail. We have found a failing node in one zone that the status page did not catch and are replacing it now. We will update you as soon as connections recover."
+      }
+    },
+    {
+      "type": "final",
+      "team": "outage",
+      "priority": 4,
+      "summary": "API connection resets for an enterprise account while the status page shows green.",
+      "reply_draft": "Thank you for the detail. We have found a failing node in one zone that the status page did not catch and are replacing it now. We will update you as soon as connections recover."
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "ticket_id": "T032",
+  "steps": [
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "audit log retention longer than 90 days"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-1005"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "assign_team",
+      "args": {
+        "team": "feature_request"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "set_priority",
+      "args": {
+        "level": 2,
+        "reason": "Compliance need with a manual export workaround."
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "draft_reply",
+      "args": {
+        "text": "Thanks for the question. Extended audit log retention of one year is available as an enterprise add-on. Your account team can enable it."
+      }
+    },
+    {
+      "type": "final",
+      "team": "feature_request",
+      "priority": 2,
+      "summary": "Enterprise asks for one year of audit log retention.",
+      "reply_draft": "Thanks for the question. Extended audit log retention of one year is available as an enterprise add-on. Your account team can enable it."
+    }
+  ]
+}

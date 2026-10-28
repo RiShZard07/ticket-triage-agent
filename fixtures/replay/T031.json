@@ -1,0 +1,49 @@
+{
+  "ticket_id": "T031",
+  "steps": [
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "Slack integration notifications",
+        "k": 3
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-1015"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "assign_team",
+      "args": {
+        "team": "feature_request"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "set_priority",
+      "args": {
+        "level": 1,
+        "reason": "Integration request from a small free account."
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "draft_reply",
+      "args": {
+        "text": "Thanks for asking. A native Slack integration is planned. In the meantime the generic connector can post new ticket notifications into a channel."
+      }
+    },
+    {
+      "type": "final",
+      "team": "feature_request",
+      "priority": 1,
+      "summary": "Request for a Slack integration.",
+      "reply_draft": "Thanks for asking. A native Slack integration is planned. In the meantime the generic connector can post new ticket notifications into a channel."
+    }
+  ]
+}

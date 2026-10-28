@@ -1,0 +1,48 @@
+{
+  "ticket_id": "T033",
+  "steps": [
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "impersonation company name logo contacting customers"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-1006"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "assign_team",
+      "args": {
+        "team": "abuse"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "set_priority",
+      "args": {
+        "level": 4,
+        "reason": "Active impersonation targeting the customer's customers."
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "draft_reply",
+      "args": {
+        "text": "Thank you for reporting this. We have suspended the impersonating workspace pending review. Please forward the messages your customers received so trust and safety can complete the case."
+      }
+    },
+    {
+      "type": "final",
+      "team": "abuse",
+      "priority": 4,
+      "summary": "Workspace impersonating the customer and contacting their customers.",
+      "reply_draft": "Thank you for reporting this. We have suspended the impersonating workspace pending review. Please forward the messages your customers received so trust and safety can complete the case."
+    }
+  ]
+}

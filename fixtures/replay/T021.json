@@ -1,0 +1,48 @@
+{
+  "ticket_id": "T021",
+  "steps": [
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "search API intermittent timeouts"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-1014"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "assign_team",
+      "args": {
+        "team": "outage"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "set_priority",
+      "args": {
+        "level": 3,
+        "reason": "Partial degradation affecting a Pro customer's end users."
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "draft_reply",
+      "args": {
+        "text": "We are seeing elevated timeouts on search under load and are adding capacity. Retries are safe in the meantime. We will update you once error rates are back to normal."
+      }
+    },
+    {
+      "type": "final",
+      "team": "outage",
+      "priority": 3,
+      "summary": "Roughly five percent of search calls time out since Monday.",
+      "reply_draft": "We are seeing elevated timeouts on search under load and are adding capacity. Retries are safe in the meantime. We will update you once error rates are back to normal."
+    }
+  ]
+}

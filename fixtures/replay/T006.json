@@ -1,0 +1,48 @@
+{
+  "ticket_id": "T006",
+  "steps": [
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "sales tax charged tax exempt certificate"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-1004"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "assign_team",
+      "args": {
+        "team": "billing"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "set_priority",
+      "args": {
+        "level": 2,
+        "reason": "Billing correction with a valid certificate on file."
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "draft_reply",
+      "args": {
+        "text": "Thanks for your patience. We have confirmed your exemption certificate is on file, flagged the account as tax exempt, and asked billing to credit the tax on the last two invoices."
+      }
+    },
+    {
+      "type": "final",
+      "team": "billing",
+      "priority": 2,
+      "summary": "Tax charged despite exemption certificate; credit two invoices and fix the flag.",
+      "reply_draft": "Thanks for your patience. We have confirmed your exemption certificate is on file, flagged the account as tax exempt, and asked billing to credit the tax on the last two invoices."
+    }
+  ]
+}

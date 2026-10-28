@@ -1,0 +1,48 @@
+{
+  "ticket_id": "T008",
+  "steps": [
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "change billing contact email receipts"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-1013"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "assign_team",
+      "args": {
+        "team": "billing"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "set_priority",
+      "args": {
+        "level": 1,
+        "reason": "Contact update with nothing overdue."
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "draft_reply",
+      "args": {
+        "text": "We have updated the billing contact so receipts and invoices go to the accounts mailbox from now on. The latest invoice will be resent there."
+      }
+    },
+    {
+      "type": "final",
+      "team": "billing",
+      "priority": 1,
+      "summary": "Billing contact email change for a Pro account.",
+      "reply_draft": "We have updated the billing contact so receipts and invoices go to the accounts mailbox from now on. The latest invoice will be resent there."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+[
+  {"account_id": "ACC-1001", "name": "Northwind Logistics", "plan": "enterprise", "seats": 240, "open_incident": false, "region": "us-east", "customer_since": "2022-03"},
+  {"account_id": "ACC-1002", "name": "Bluefin Analytics", "plan": "pro", "seats": 18, "open_incident": false, "region": "eu-west", "customer_since": "2023-11"},
+  {"account_id": "ACC-1003", "name": "Granite Peak Outfitters", "plan": "free", "seats": 2, "open_incident": false, "region": "us-west", "customer_since": "2026-01"},
+  {"account_id": "ACC-1004", "name": "Harbor Lane Dental", "plan": "pro", "seats": 6, "open_incident": false, "region": "us-east", "customer_since": "2024-06"},
+  {"account_id": "ACC-1005", "name": "Quillfeather Publishing", "plan": "enterprise", "seats": 410, "open_incident": true, "region": "eu-west", "customer_since": "2021-09"},
+  {"account_id": "ACC-1006", "name": "Saltmarsh Robotics", "plan": "pro", "seats": 35, "open_incident": false, "region": "us-west", "customer_since": "2024-02"},
+  {"account_id": "ACC-1007", "name": "Copperline Studio", "plan": "free", "seats": 1, "open_incident": false, "region": "us-east", "customer_since": "2025-08"},
+  {"account_id": "ACC-1008", "name": "Ridgeback Freight", "plan": "enterprise", "seats": 120, "open_incident": true, "region": "ap-south", "customer_since": "2022-12"},
+  {"account_id": "ACC-1009", "name": "Lanternfish Games", "plan": "pro", "seats": 12, "open_incident": false, "region": "us-west", "customer_since": "2025-03"},
+  {"account_id": "ACC-1010", "name": "Meridian Tutoring Collective", "plan": "free", "seats": 4, "open_incident": false, "region": "us-east", "customer_since": "2025-10"},
+  {"account_id": "ACC-1011", "name": "Orchard Street Bakery", "plan": "free", "seats": 1, "open_incident": false, "region": "us-east", "customer_since": "2026-04"},
+  {"account_id": "ACC-1012", "name": "Tidewater Insurance Group", "plan": "enterprise", "seats": 900, "open_incident": false, "region": "us-east", "customer_since": "2020-05"},
+  {"account_id": "ACC-1013", "name": "Fernhill Veterinary", "plan": "pro", "seats": 9, "open_incident": false, "region": "eu-west", "customer_since": "2024-09"},
+  {"account_id": "ACC-1014", "name": "Kestrel Drone Services", "plan": "pro", "seats": 22, "open_incident": false, "region": "ap-south", "customer_since": "2023-07"},
+  {"account_id": "ACC-1015", "name": "Pinecone Community Radio", "plan": "free", "seats": 3, "open_incident": false, "region": "us-west", "customer_since": "2025-12"}
+]

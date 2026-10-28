@@ -1,0 +1,49 @@
+{
+  "ticket_id": "T004",
+  "steps": [
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "accidental upgrade refund annual plan",
+        "k": 3
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-1003"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "assign_team",
+      "args": {
+        "team": "billing"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "set_priority",
+      "args": {
+        "level": 1,
+        "reason": "Small free account asking about a charge; low impact."
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "draft_reply",
+      "args": {
+        "text": "Sorry about the mix up. Since the upgrade was within the last few days it qualifies for a full refund. We will revert the plan to free and refund the $348."
+      }
+    },
+    {
+      "type": "final",
+      "team": "billing",
+      "priority": 1,
+      "summary": "Accidental annual Pro upgrade on a free account; refund and revert plan.",
+      "reply_draft": "Sorry about the mix up. Since the upgrade was within the last few days it qualifies for a full refund. We will revert the plan to free and refund the $348."
+    }
+  ]
+}

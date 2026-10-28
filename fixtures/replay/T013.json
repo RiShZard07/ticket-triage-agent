@@ -1,0 +1,49 @@
+{
+  "ticket_id": "T013",
+  "steps": [
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "revoked API key still accepted requests succeeding",
+        "k": 3
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-1002"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "assign_team",
+      "args": {
+        "team": "auth"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "set_priority",
+      "args": {
+        "level": 4,
+        "reason": "A leaked production key is still accepted an hour after revocation."
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "draft_reply",
+      "args": {
+        "text": "We have purged the key cache so the revoked key is rejected immediately. Please rotate any other keys from the same repository and let us know if you see further requests succeed."
+      }
+    },
+    {
+      "type": "final",
+      "team": "auth",
+      "priority": 4,
+      "summary": "Revoked leaked API key still working; cache purge and rotation.",
+      "reply_draft": "We have purged the key cache so the revoked key is rejected immediately. Please rotate any other keys from the same repository and let us know if you see further requests succeed."
+    }
+  ]
+}

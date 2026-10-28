@@ -1,0 +1,55 @@
+{
+  "ticket_id": "T020",
+  "steps": [
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "scheduled report not sent this morning"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-104"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-1004"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "assign_team",
+      "args": {
+        "team": "outage"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "set_priority",
+      "args": {
+        "level": 3,
+        "reason": "Missed daily report for a Pro clinic account."
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "draft_reply",
+      "args": {
+        "text": "Thanks for letting us know. The 7am schedule was skipped during a scheduler restart. We have re-triggered it and are fixing the cause."
+      }
+    },
+    {
+      "type": "final",
+      "team": "outage",
+      "priority": 3,
+      "summary": "Daily scheduled report skipped for a Pro account.",
+      "reply_draft": "Thanks for letting us know. The 7am schedule was skipped during a scheduler restart. We have re-triggered it and are fixing the cause."
+    }
+  ]
+}

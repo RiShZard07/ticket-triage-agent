@@ -1,0 +1,48 @@
+{
+  "ticket_id": "T026",
+  "steps": [
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "export Parquet format"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-1002"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "assign_team",
+      "args": {
+        "team": "feature_request"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "set_priority",
+      "args": {
+        "level": 2,
+        "reason": "Workflow improvement for a Pro analytics customer."
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "draft_reply",
+      "args": {
+        "text": "Thanks for the request. Parquet export is in our export backlog and we have attached your use case to it."
+      }
+    },
+    {
+      "type": "final",
+      "team": "feature_request",
+      "priority": 2,
+      "summary": "Request for Parquet export alongside CSV.",
+      "reply_draft": "Thanks for the request. Parquet export is in our export backlog and we have attached your use case to it."
+    }
+  ]
+}

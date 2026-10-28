@@ -1,0 +1,49 @@
+{
+  "ticket_id": "T001",
+  "steps": [
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "duplicate charge same invoice refund",
+        "k": 3
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-1002"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "assign_team",
+      "args": {
+        "team": "billing"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "set_priority",
+      "args": {
+        "level": 3,
+        "reason": "Customer was double charged; money is owed back but service is not affected."
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "draft_reply",
+      "args": {
+        "text": "Thanks for flagging this. We can see the duplicate charge against INV-20931 and have asked billing to refund it to the original card within 5 business days. We will also check why the retry ran twice."
+      }
+    },
+    {
+      "type": "final",
+      "team": "billing",
+      "priority": 3,
+      "summary": "Duplicate charge on INV-20931 for a Pro account; refund requested.",
+      "reply_draft": "Thanks for flagging this. We can see the duplicate charge against INV-20931 and have asked billing to refund it to the original card within 5 business days. We will also check why the retry ran twice."
+    }
+  ]
+}

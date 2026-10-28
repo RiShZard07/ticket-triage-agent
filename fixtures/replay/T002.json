@@ -1,0 +1,48 @@
+{
+  "ticket_id": "T002",
+  "steps": [
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "invoice wrong seat count after seat reduction"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-1001"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "assign_team",
+      "args": {
+        "team": "billing"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "set_priority",
+      "args": {
+        "level": 2,
+        "reason": "Billing correction for an enterprise account; no service impact."
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "draft_reply",
+      "args": {
+        "text": "Thanks for the details. The October invoice should reflect 240 seats. Billing will reissue it with the correct count and apply a credit for the difference."
+      }
+    },
+    {
+      "type": "final",
+      "team": "billing",
+      "priority": 2,
+      "summary": "October invoice bills 260 seats after a reduction to 240; credit and reissue needed.",
+      "reply_draft": "Thanks for the details. The October invoice should reflect 240 seats. Billing will reissue it with the correct count and apply a credit for the difference."
+    }
+  ]
+}

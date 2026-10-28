@@ -1,0 +1,49 @@
+{
+  "ticket_id": "T040",
+  "steps": [
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "fake reviews community accounts created same day",
+        "k": 3
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-1013"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "assign_team",
+      "args": {
+        "team": "abuse"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "set_priority",
+      "args": {
+        "level": 2,
+        "reason": "Reputation harm with no safety risk."
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "draft_reply",
+      "args": {
+        "text": "Thanks for reporting these. Trust and safety is reviewing the accounts and the reviews will be removed if they are confirmed fake."
+      }
+    },
+    {
+      "type": "final",
+      "team": "abuse",
+      "priority": 2,
+      "summary": "Fake reviews posted from newly created accounts.",
+      "reply_draft": "Thanks for reporting these. Trust and safety is reviewing the accounts and the reviews will be removed if they are confirmed fake."
+    }
+  ]
+}

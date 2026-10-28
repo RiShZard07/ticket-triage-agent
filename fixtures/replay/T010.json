@@ -1,0 +1,49 @@
+{
+  "ticket_id": "T010",
+  "steps": [
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "password reset link expired immediately",
+        "k": 3
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-1007"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "assign_team",
+      "args": {
+        "team": "auth"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "set_priority",
+      "args": {
+        "level": 3,
+        "reason": "Single user fully locked out of a free account."
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "draft_reply",
+      "args": {
+        "text": "Sorry you are locked out. We have issued a fresh reset link that stays valid for 24 hours and are looking into why the earlier links expired early."
+      }
+    },
+    {
+      "type": "final",
+      "team": "auth",
+      "priority": 3,
+      "summary": "Reset links expire immediately; user locked out of a free account.",
+      "reply_draft": "Sorry you are locked out. We have issued a fresh reset link that stays valid for 24 hours and are looking into why the earlier links expired early."
+    }
+  ]
+}

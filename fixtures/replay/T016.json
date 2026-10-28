@@ -1,0 +1,49 @@
+{
+  "ticket_id": "T016",
+  "steps": [
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "recovery codes rejected lost phone two-factor",
+        "k": 3
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-1015"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "assign_team",
+      "args": {
+        "team": "auth"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "set_priority",
+      "args": {
+        "level": 3,
+        "reason": "Sole admin locked out of a free account."
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "draft_reply",
+      "args": {
+        "text": "Sorry about the stolen phone. Since you are the only admin we need to verify ownership before resetting two-factor. Please reply from the account email and we will send the verification steps."
+      }
+    },
+    {
+      "type": "final",
+      "team": "auth",
+      "priority": 3,
+      "summary": "Sole admin locked out after losing the 2FA device; recovery codes rejected.",
+      "reply_draft": "Sorry about the stolen phone. Since you are the only admin we need to verify ownership before resetting two-factor. Please reply from the account email and we will send the verification steps."
+    }
+  ]
+}

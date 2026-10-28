@@ -1,0 +1,48 @@
+{
+  "ticket_id": "T023",
+  "steps": [
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "EU region slow page loads"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-1013"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "assign_team",
+      "args": {
+        "team": "outage"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "set_priority",
+      "args": {
+        "level": 4,
+        "reason": "Severe slowdown for all users of an EU Pro clinic."
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "draft_reply",
+      "args": {
+        "text": "We are investigating slow responses in the EU region and expect a fix shortly. We will let you know as soon as page loads are back to normal."
+      }
+    },
+    {
+      "type": "final",
+      "team": "outage",
+      "priority": 4,
+      "summary": "EU region slowness of 15 to 20 seconds per page for a clinic.",
+      "reply_draft": "We are investigating slow responses in the EU region and expect a fix shortly. We will let you know as soon as page loads are back to normal."
+    }
+  ]
+}

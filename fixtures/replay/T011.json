@@ -1,0 +1,48 @@
+{
+  "ticket_id": "T011",
+  "steps": [
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "all users cannot log in SAML error this morning"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-1012"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "assign_team",
+      "args": {
+        "team": "outage"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "set_priority",
+      "args": {
+        "level": 5,
+        "reason": "900 users down and business processing stopped."
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "draft_reply",
+      "args": {
+        "text": "We are treating this as a critical incident. Engineers are investigating the login failures and will update you every 30 minutes."
+      }
+    },
+    {
+      "type": "final",
+      "team": "outage",
+      "priority": 5,
+      "summary": "All 900 users receive SAML errors at login; treated as a critical login outage.",
+      "reply_draft": "We are treating this as a critical incident. Engineers are investigating the login failures and will update you every 30 minutes."
+    }
+  ]
+}

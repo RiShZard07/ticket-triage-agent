@@ -1,0 +1,49 @@
+{
+  "ticket_id": "T037",
+  "steps": [
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "thousands of requests per hour form submissions rotating IPs",
+        "k": 3
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-1009"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "assign_team",
+      "args": {
+        "team": "outage"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "set_priority",
+      "args": {
+        "level": 3,
+        "reason": "Traffic flood degrading a Pro customer's form."
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "draft_reply",
+      "args": {
+        "text": "We are blocking the traffic pattern hitting your form and adding a challenge to it. The flood should stop shortly and we will confirm."
+      }
+    },
+    {
+      "type": "final",
+      "team": "outage",
+      "priority": 3,
+      "summary": "Automated traffic flooding a public form; treated as a capacity problem.",
+      "reply_draft": "We are blocking the traffic pattern hitting your form and adding a challenge to it. The flood should stop shortly and we will confirm."
+    }
+  ]
+}

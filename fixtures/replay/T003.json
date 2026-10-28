@@ -1,0 +1,48 @@
+{
+  "ticket_id": "T003",
+  "steps": [
+    {
+      "type": "tool_call",
+      "name": "search_similar_tickets",
+      "args": {
+        "query": "tax form and billing address on invoices"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "lookup_account",
+      "args": {
+        "account_id": "ACC-1012"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "assign_team",
+      "args": {
+        "team": "billing"
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "set_priority",
+      "args": {
+        "level": 1,
+        "reason": "Paperwork request with no deadline pressure."
+      }
+    },
+    {
+      "type": "tool_call",
+      "name": "draft_reply",
+      "args": {
+        "text": "Happy to help. Finance will send the signed tax form and update the headquarters address on future invoices. Expect both within a few business days."
+      }
+    },
+    {
+      "type": "final",
+      "team": "billing",
+      "priority": 1,
+      "summary": "Enterprise customer needs a tax form and an address update on invoices.",
+      "reply_draft": "Happy to help. Finance will send the signed tax form and update the headquarters address on future invoices. Expect both within a few business days."
+    }
+  ]
+}
