@@ -26,7 +26,10 @@ ranking, account lookup, the agent happy path on a replay fixture, recovery
 after a rejected call, tool errors surfaced to the model, escalation by tool
 and by step budget, the Claude adapter against a fake client, recording and
 replaying fixtures, hand-computed metrics, the gate exit code, and the CLI
-through a subprocess.
+through a subprocess. Two CLI tests added on 2026-11-24 (a replay fixture that
+runs out of steps, and a missing fixture directory, both reported as usage
+errors with exit code 2) bring the count to 45; the suite was re-run that day
+on CPython 3.13.18 with `Ran 45 tests` and `OK`.
 
 ## Replay evaluation (scripted fixtures, not a model)
 

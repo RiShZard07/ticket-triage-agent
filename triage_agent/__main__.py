@@ -11,7 +11,7 @@ from pathlib import Path
 
 from .agent import Agent, Ticket
 from .evaluate import compute_metrics, load_tickets, run_eval
-from .models import DEFAULT_CLAUDE_MODEL, ClaudeModel, Model, RecordingModel, ReplayModel
+from .models import DEFAULT_CLAUDE_MODEL, ClaudeModel, Model, RecordingModel, ReplayError, ReplayModel
 from .telemetry import Telemetry
 from .tools import build_default_registry
 
@@ -113,6 +113,14 @@ def main(argv: list[str] | None = None) -> int:
         return handlers[args.command](args)
     except CliError as exc:
         print(f"error: {exc}", file=sys.stderr)
+        return 2
+    except ReplayError as exc:
+        # A fixture is a script with a fixed number of steps. Asking the replay model
+        # for more steps than it has (for example --max-steps above the longest
+        # fixture) or pointing --fixtures at the wrong directory is a usage problem,
+        # not a harness bug, so report it like one instead of printing a traceback.
+        print(f"error: {exc}; the replay model only knows the steps its fixtures script, "
+              "so check --fixtures, lower --max-steps or re-record with `record`", file=sys.stderr)
         return 2
 
 

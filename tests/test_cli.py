@@ -47,6 +47,20 @@ class CliTests(unittest.TestCase):
             self.assertEqual(main(["run", "--model", "replay"]), 2)
         self.assertEqual(err.getvalue().count("error:"), 3)
 
+    def test_replay_fixture_exhaustion_is_a_usage_error(self) -> None:
+        # T038 is scripted to run out of steps at 8. With a larger budget the replay
+        # model has nothing left to say, which must not surface as a traceback.
+        with redirect_stderr(io.StringIO()) as err:
+            self.assertEqual(main(["run", "--model", "replay", "--ticket-id", "T038", "--max-steps", "10"]), 2)
+        message = err.getvalue()
+        self.assertIn("error: fixture for T038 has 8 steps but step 8 was requested", message)
+        self.assertIn("--max-steps", message)
+
+    def test_missing_fixture_directory_is_a_usage_error(self) -> None:
+        with tempfile.TemporaryDirectory() as empty, redirect_stderr(io.StringIO()) as err:
+            self.assertEqual(main(["run", "--model", "replay", "--ticket-id", "T007", "--fixtures", empty]), 2)
+        self.assertIn("error: no replay fixture for ticket T007", err.getvalue())
+
 
 if __name__ == "__main__":
     unittest.main()
