@@ -50,6 +50,12 @@ python3 -m triage_agent record --output fixtures/replay
 Running `record` over `fixtures/replay` replaces the hand-authored scripts with
 real recordings; after that, replay numbers describe that recorded model run.
 
+A replay fixture is a script with a fixed number of steps, so the replay model
+cannot answer more model calls than the fixture contains. Running with
+`--max-steps` above the longest fixture (8 steps, the runaway ticket T038) or
+with `--fixtures` pointing at the wrong directory stops with `error: ...` and
+exit code 2 rather than a traceback.
+
 ## Architecture
 
 ```
